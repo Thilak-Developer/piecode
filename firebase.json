@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/piecode",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
