@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { UserDetails } from '../user-details.model';
 import { collection, getDocs } from "firebase/firestore";
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { AngularFireList } from '@angular/fire/compat/database';
 import { db } from 'src/environments/environment';
 
 
@@ -14,7 +14,7 @@ export class FirebaseService {
   messages!: AngularFireList<any>;
   isLoggedIn = false
 
-  constructor(public firebaseAuth: AngularFireAuth, private firestore: AngularFirestore, private db: AngularFireDatabase) { }
+  constructor(public firebaseAuth: AngularFireAuth, private firestore: AngularFirestore) { }
 
   async signin(email: string, password: string) {
     await this.firebaseAuth.signInWithEmailAndPassword(email, password)
