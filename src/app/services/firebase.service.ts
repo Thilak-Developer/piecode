@@ -2,10 +2,23 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { UserDetails } from '../user-details.model';
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { AngularFireList } from '@angular/fire/compat/database';
-import { db } from 'src/environments/environment';
+import { initializeApp } from 'firebase/app';
 
+const firebaseConfig = {
+  apiKey: "AIzaSyBHqmnNlBWOjMLJjdSbmFwyD8H8IBjmgBk",
+  authDomain: "piecode-43cba.firebaseapp.com",
+  databaseURL: "https://piecode-43cba-default-rtdb.firebaseio.com",
+  projectId: "piecode-43cba",
+  storageBucket: "piecode-43cba.appspot.com",
+  messagingSenderId: "555706631709s",
+  appId: "1:555706631709:web:771ddc3c30e51bf019a8f4"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
 
 @Injectable({
   providedIn: 'root'
